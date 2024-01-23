@@ -11,6 +11,11 @@ export const server = setupServer(
     )
   }),
   http.post('http://localhost:4100/cards', () => {
-    return HttpResponse.json({})
+    const newCard = {
+      id: Date.now(),
+      content: 'New card content',
+      createdAt: new Date().toISOString()
+    };
+    return HttpResponse.json(newCard)
   })
 )

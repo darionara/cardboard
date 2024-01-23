@@ -38,5 +38,7 @@ describe('BoardContainer integration tests', () => {
     })
 
     expect(createCardSpy).toHaveBeenCalledTimes(1)
+
+    createCardSpy.mockRestore()
   })
 })
