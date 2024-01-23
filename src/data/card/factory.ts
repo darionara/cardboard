@@ -13,7 +13,7 @@ export const createManyCards = (
   amount: number,
   data?: Partial<CardModelData>
 ) => {
-  return [...new Array(amount)].map((_card) => {
-    return createCard(data)
+  return [...new Array(amount)].map((_card, idx) => {
+    return createCard({ ...data, id: data?.id ? data.id + idx : idx })
   })
 }
